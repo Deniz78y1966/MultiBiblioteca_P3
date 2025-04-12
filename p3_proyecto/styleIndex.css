@@ -1,0 +1,233 @@
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* ... */
+
+
+/* Estilo del header */
+header {
+    background-color: #333;
+    font-size: 17px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 70px;
+}
+/* ... */
+
+.container-text-center {
+    text-align: center;
+}
+
+/* Estilo del logo */
+.logo img {
+    max-width: 175px;
+}
+/* ... */
+
+
+/* Efecto al pasar el mouse sobre el logo */
+.logo img:hover {
+    transform: scale(1.1);
+}
+/* ... */
+
+/* Estilos del nav NAVEGACION */
+.navegacion nav ul {
+    font-weight: 600;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+/* ... */
+
+
+/* Espaciado entre elementos*/
+.navegacion nav ul li {
+    margin-left: 6rem;
+    /* margin: 0 15px; */
+}
+/* ... */
+
+/* Estilos de los enlaces del nav */
+.navegacion nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+/* ... */
+
+
+
+/* div BOTONES */
+.botones buttons {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/* ... */
+
+.botones button.registro {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+/* ... */
+
+
+/* Efecto hover: cambia de color y se eleva un poco */
+.btn:hover {
+    background-color: #c96240; /* Un tono más oscuro de lightsalmon */
+    color: white;
+    transform: translateY(-2px); /* Levanta ligeramente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efecto 3D */
+}
+/* ... */
+
+
+/* Efecto al hacer click */
+.btn:active {
+    transform: translateY(1px); /* Baja ligeramente para efecto de presión */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-inner {
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh; 
+    margin-top: 40px;
+}
+/* ... */
+
+/* Estilos de la sección Hero */
+.hero {
+    position: relative;
+    width: 25%; 
+    height: 650px; 
+    overflow: hidden;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Centra el contenedor */
+}
+
+/* Ajuste de imágenes del slider */
+#heroCarousel .carousel-item {
+    height: 100%;
+}
+
+#heroCarousel .carousel-item     {
+    width: 100%; /* Hacemos que la imagen ocupe el 100% del contenedor */
+    height: 100%; /* Aseguramos que las imágenes tengan la altura correcta */
+    object-fit: cover; /* Las imágenes se ajustan sin deformarse */
+}
+/* ... */
+
+
+/* Estilos para la leyenda del carousel */
+#heroCarousel .carousel-caption {
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center; 
+    color: white;
+    animation: fadeIn 1s ease-in-out; /* Animación para el texto */
+}
+/* ... */
+
+/* Animación para la aparición del texto */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px); /* Desplazamiento inicial */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0); /* Finaliza en su posición */
+    }
+}
+
+#heroCarousel .carousel-caption h5 {
+    font-size: 1.5rem; /* Ajusté el tamaño de la fuente */
+    font-weight: bold;
+    margin-bottom: 10px; /* Espacio debajo del h5 */
+}
+
+#heroCarousel .carousel-caption p {
+    font-size: 1rem;
+    font-weight: normal;
+}
+/* ... */
+
+
+/* Estilos para los beneficios */
+.benefits {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    margin-bottom: 70px;
+}
+
+.benefits h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.benefits .row .col-md-3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.benefits .row .col-md-3 i {
+    color: #c96240;
+    margin-bottom: 20px;
+}
+
+.benefits .row .col-md-3 h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.benefits .row .col-md-3 p {
+    font-size: 1rem;
+    color: #555;
+}
+/* ... */
+
+
+/* FOOTER */
+footer {    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: lightsalmon;
+    color:black;
+    text-align: center;
+    line-height: 60px;
+}
+
+/* User profile styles in header */
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
