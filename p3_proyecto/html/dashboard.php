@@ -41,7 +41,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                         <span class="icon">
                             <i class='bx bx-badge-check'></i>
                         </span>
-                        <span class="title">Membership</span>
+                        <span class="title">Prestamos</span>
                     </a>
                 </li>
 
