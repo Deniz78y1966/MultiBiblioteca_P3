@@ -10,8 +10,8 @@
 
 <!-- Navbar -->
 <div class="navbar" id="theNavbar">
-    <a href="../index.php">Home</a>
-    <a href="catalogo.php">Library</a>
+    <a href="index.php">Home</a>
+    <a href="#">Library</a>
     <a href="history.php">History</a>
     <a href="dashboard.php">Dashboard</a>
     <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">&#9776;</a>

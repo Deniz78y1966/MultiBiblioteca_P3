@@ -1,0 +1,128 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    font-size: 17px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 70px;
+}
+
+header .logo img {
+    width: 100px;
+}
+
+header .navegacion nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header .navegacion nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header .user img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.sidebar {
+    background-color: #d6671f; 
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    width: 200px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #3498db; 
+}
+
+.sidebar .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.form-group {
+    width: 500px;
+    margin-top: 150px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    padding-top: 150px;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color:   #a9a9a9; 
+    color: #333; 
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:   #a9a9a9; 
+}
+
+.mensaje {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f39c12;
+    color: white;
+    display: none;
+}

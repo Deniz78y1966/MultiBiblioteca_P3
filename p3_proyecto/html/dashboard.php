@@ -37,7 +37,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="prestamos.php">
                         <span class="icon">
                             <i class='bx bx-badge-check'></i>
                         </span>

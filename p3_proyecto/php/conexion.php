@@ -44,5 +44,4 @@ if ($check->num_rows == 0) {
 
 $conn->close();
 
-
 ?>
