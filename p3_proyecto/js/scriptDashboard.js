@@ -1,4 +1,4 @@
-// Efecto para el hover de los elementos del sidebar
+// Efecto para el hover del sidebar
 let list = document.querySelectorAll(".sidebar li");
 
 function handleMouseEnter() {
@@ -31,32 +31,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //  Main Toggle.
 document.addEventListener('DOMContentLoaded', () => {
-    let sidebar = document.querySelector('.sidebar');   
-    let toggle = document.querySelector('.toggle');
-    let main = document.querySelector('.main');
+    let toggle = document.querySelector(".toggle");
+    let sidebar = document.querySelector(".sidebar");   
+    let main = document.querySelector(".main");
 
-    toggle.addEventListener('click', () => {
+    toggle.onclick = function() {
         sidebar.classList.toggle("active");
-        toggle.classList.toggle("active");
         main.classList.toggle("active");
-    });
-
-    // Sign out functionality
-    document.getElementById('sign-out-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        fetch('../php/logout.php')
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = 'login.php';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    });
+    };
 });
+
+// Sign out functionality
+document.getElementById('sign-out-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    fetch('../php/logout.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = 'login.php';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
 
 
 

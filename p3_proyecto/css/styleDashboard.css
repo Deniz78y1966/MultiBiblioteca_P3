@@ -88,12 +88,16 @@ header {
     border-left: 10px solid var(--orange);
     transition: 0.5s;
     overflow: hidden;
-
     top: 20;
     left: 0;
     margin-left: 0;
     height: 100%;
 }
+
+/* .sidebar.active {
+    width: 75px;
+    position: relative;
+} */
 
 .sidebar ul {
     position: absolute;
@@ -179,6 +183,7 @@ header {
     pointer-events: none;
 }
 
+/* Main */
 .main {
     position: absolute;
     width: calc(100% - 250px); /* Adjusted width to match sidebar width */
@@ -187,6 +192,10 @@ header {
     background: var(--white);
     transition: 0.5s;
 }
+
+/* .main.active {
+    width: calc(100% - 75px);
+} */
 
 .topbar {
     width: 100%;
@@ -211,40 +220,55 @@ header {
 
 .search {
     position: relative;
-    width: 400;
+    width: 400px;
     margin: 0 10px;
 }
 
 .search label {
     position: relative;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .search label input {
     width: 100%;
-    height: 40%;
+    height: 40px;
     border-radius: 40px;
     padding: 5px 20px;
     padding-left: 35px;
-    font-size: 18px;
+    font-size: 16px;
     outline: none;
     border: 1px solid var(--dark2);
 }
 
 .search label i {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 10px;
-    font-size: 1.2rem;
+    transform: translateY(-50%);
+    font-size: 20px;
 }
 
 /* Not admin, no displaying */
 .admin-only {
-    display: none;
+    display: flex;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    /* display: none; */
 }
 
 .bibliotecario-only {
-    display: none;
+    display: flex;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    /* display: none; */
 }
 
 .user {
@@ -263,4 +287,29 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-login, .btn-register {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-login {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+}
+
+.btn-register {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: white;
 }

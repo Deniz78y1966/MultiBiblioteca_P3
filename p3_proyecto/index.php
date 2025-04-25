@@ -6,20 +6,18 @@ include 'php/conexion.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- jQuery first, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/styleIndex.css">
+    <link rel="stylesheet" href="css/styleLogReg">
     <title>Sistema Bibliotecario</title>
 </head>
 
 <body>
- 
     <header>
         <!-- Contenedor del logo. -->
         <div class="logo"> 
@@ -28,13 +26,12 @@ include 'php/conexion.php';
             </a>
         </div>
 
-        <!-- Contenedor para los enlaces de navegacion del sitio. -->
         <div class="navegacion">
             <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="html/library.php">Library</a></li>
-                <li><a href="#">History</a></li>
+                <li><a href="html/catalogo.php">Library</a></li>
+                <li><a href="html/history.php">History</a></li>
                 <li><a href="html/dashboard.php">Dashboard</a></li>
             </ul>
             </nav>
@@ -132,7 +129,7 @@ include 'php/conexion.php';
 
       <!-- Sección Beneficios; Final de página -->
       <footer class="bg-lightsalmon text-dark text-center">
-         <p>&copy; 2025 | BookCloud. Todos los derechos reservados</p>
+         <p>&copy; 2025 | BookCloud. All rights reserved</p>
       </footer> 
 
 </body>

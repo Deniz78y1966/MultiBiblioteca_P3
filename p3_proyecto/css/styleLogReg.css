@@ -35,7 +35,6 @@
         width: calc(100% - 30px);
     }
 }
-/* I think ... */
 
 /* Detalles del main box (REGISTER/LOGIN) */
 * {
@@ -51,23 +50,35 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('imgP3/Libreria_fondo_log_reg.png') no-repeat;
+    background: url('/p3_proyecto/img/Libreria_fondo_log_reg.png') no-repeat;
     background-size: cover;
     background-position: center;
 }   
 /* ... */
 
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/p3_proyecto/img/Libreria_fondo_log_reg.png') no-repeat;
+    /* background: #1a1a1a; */
+    /* padding-top: 80px;  Para dar espacio al header */
+}
 
 /* Contenedor (REGISTER/LOGIN) */
 .wrapper {
-    width: 520px;
+    width: 420px;
+    /* width: 520px; */
     background: transparent;
+    /* background: rgba(255, 255, 255, 0.1); */
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
-    border-radius: 20px;
-    padding: 45px 60px;
+    border-radius: 10px;
+    padding: 30px 40px;
+    /* margin: 20px; */
 }
 
 .wrapper h1 {
@@ -153,6 +164,7 @@ body{
 
 /* Recordar contraseña (LOGIN)*/
 .wrapper recordar-olvidar {
+    visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;

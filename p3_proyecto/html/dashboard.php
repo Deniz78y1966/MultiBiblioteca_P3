@@ -4,8 +4,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     header('Location: login.php');
     exit();
 }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,44 +22,18 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 </head>
 
 <body>
-    <!-- Navigation bar code -->
-    <header>
-        <!-- Contenedor del logo. -->
-        <div class="logo">
-            <a href="../index.php">
-                <img src="../img/copiaLOGO.jpeg" alt="Logo de la Biblioteca" class="logo">
-            </a>
-        </div>
-
-        <!-- Contenedor para los enlaces de navegacion del sitio. -->
-        <div class="navegacion">
-            <nav>
-                <ul>
-                    <li><a href="../index.php">Home</a></li>
-                    <li><a href="library.php">Library</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="dashboard.php">Dashboard</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!-- User tag in the header -->
-        <div class="user">
-            <img src="../img//user/default.jpeg" alt="foto del usuario">
-        </div>
-    </header>
-
+    <?php include 'header.php'; ?>
     <!-- Sidebar -->
     <div class="container">
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="dashboard.php">
                         <span class="icon">
                             <i class='bx bx-cog'></i>
                         </span>
                         <span class="title">Settings</span>
-                    </a>
+                    </a> 
                 </li>
 
                 <li>
@@ -73,7 +46,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="chat.php">
                         <span class="icon">
                             <i class='bx bx-chat'></i>
                         </span>
@@ -81,6 +54,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                     </a>
                 </li>
 
+                <?php if ($_SESSION['user_type'] !== 'admin'): ?>
                 <li>
                     <a href="#">
                         <span class="admin-only">
@@ -99,26 +73,16 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                                 <i class='bx bx-book'></i>
                             </span>
                             <span class="title">Update Books</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" id="sign-out-btn">
-                        <span class="icon">
-                            <i class='bx bxs-door-open'></i>
                         </span>
-                        <span class="title">Sign Out</span>
                     </a>
                 </li>
+                <?php endif; ?>
             </ul>
         </div>
 
         <!-- Main content -->
         <div class="main">
             <div class="topbar">
-                <div class="toggle">
-                    <i class='bx bx-menu-alt-left'></i>
-                </div>
                 <div class="search">
                     <label>
                         <input type="text" placeholder="What are you looking for...">
@@ -126,9 +90,48 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                     </label>
                 </div>
             </div>
+
+            <!-- Settings Form -->
+            <div class="settings-container">
+                <h2>Profile Settings</h2>
+                <?php
+                if (isset($_SESSION['success'])) {
+                    echo '<div class="alert alert-success">' . htmlspecialchars($_SESSION['success']) . '</div>';
+                    unset($_SESSION['success']);
+                }
+                if (isset($_SESSION['errors'])) {
+                    foreach($_SESSION['errors'] as $error) {
+                        echo '<div class="alert alert-danger">' . htmlspecialchars($error) . '</div>';
+                    }
+                    unset($_SESSION['errors']);
+                }
+                ?>
+                <form action="update_profile.php" method="POST" enctype="multipart/form-data" id="profileForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlspecialchars($_SESSION['name'] ?? ''); ?>">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="profile_picture" class="form-label">Profile Picture</label>
+                        <input type="file" class="form-control" id="profile_picture" name="profile_picture" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+                <a href="logout.php" class="btn btn-secondary mt-3">Logout</a>
+            </div>
         </div>
     </div>
 
+    <script>
+    const form = document.getElementById('profileForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    form.addEventListener('submit', function(e) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Saving...';
+    });
+    </script>
 </body>
 
 </html>
